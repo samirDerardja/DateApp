@@ -26,12 +26,18 @@
             ],
             "styles": [
               "src/assets/css/blk-design-system.min.css",
-              "src/assets/css/nucleo-icons.css",
-              "src/styles.css"
+              "src/assets/css/nucleo-icons.css"
+              
+            
             ],
             "scripts": [
-              "src/assets/js/blk-design-system.js"
-            ]
+               "src/assets/js/core/jquery.min.js",
+              "src/assets/js/blk-design-system.min.js",
+              "src/assets/js/core/popper.min.js",
+              "src/assets/js/core/bootstrap.min.js"
+           
+
+            ] 
           },
           "configurations": {
             "production": {

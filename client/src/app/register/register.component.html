@@ -1,0 +1,65 @@
+
+
+
+    <div class="content">
+
+        <div class="container-fluid">
+
+
+            <div class="row justify-content-center">
+                <div class="col-md-10">
+
+                    <div class="row align-items-center">
+                        <div class="col-lg-7 mb-5 mb-lg-0 ">
+
+                            <h2 class="mb-5 text-center">Fill the form It's easy.</h2>
+
+                            <form #registerform="ngForm" (ngSubmit)="register()" class="border-right pr-5 mb-5 "
+                                autocomplete="off">
+                                <div class="row ">
+                                    <div class="col-md-12 form-group ">
+                                        <input name="username" [(ngModel)]="model.username" class="form-control"
+                                            placeholder="Nom utilisateur">
+
+                                    </div>
+                                </div>
+                             
+                                <div class="row">
+                                    <div class="col-md-12 form-group">
+                                        <input name="password" [(ngModel)]="model.password" class="form-control"
+                                            placeholder="Mot de passe" type="password">
+                                    </div>
+                                </div>
+
+
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <button type="submit" class="btn btn-success btn-round">
+                                            Valider <i class="tim-icons icon-check-2"></i>
+                                        </button>
+                                        <button (click)="cancel()" type="button" class="btn btn-warning btn-round ml-2">
+                                            Annuler <i class="tim-icons icon-check-2" ></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+
+                            <div id="form-message-warning mt-4"></div>
+                            <div id="form-message-success">
+                                Your message was sent, thank you!
+                            </div>
+
+                        </div>
+                        <div class="col-lg-4 ml-auto">
+                            <h3 class="mb-4">Let's talk about everything.</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil deleniti itaque similique
+                                magni. Magni, laboriosam perferendis maxime!</p>
+                            <p><a href="#">Read more</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+

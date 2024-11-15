@@ -1,0 +1,75 @@
+<nav class="navbar navbar-expand-lg bg-primary">
+    <div class="container">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-bar navbar-kebab"></span>
+      <span class="navbar-toggler-bar navbar-kebab"></span>
+      <span class="navbar-toggler-bar navbar-kebab"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      
+  @if (accountService.currentUser()) {
+    <ul class="navbar-nav" *ngIf="accountService.currentUser()">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Les matches! <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Lists</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Messages</a>
+        </li>
+      </ul>
+
+    
+
+}
+
+@if (accountService.currentUser()) 
+{
+    <div class="dropdown ml-auto">
+        <a class="dropdown-toggle text-dark text-decoration-none" style="font-family:'Poppins';color: beige!important" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Bienvenue user
+        </a>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+         
+          <a class="dropdown-item" href="#">Editer profil</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" (click)="logout()">Se deconnecter</a>
+        
+        </div>
+      </div>
+
+      
+}
+
+  
+@if(!accountService.currentUser()){
+
+    <form #loginForm ="ngForm" (ngSubmit)="login()" class="form-inline ml-auto" autocomplete="off" >
+        <div class="form-group no-border">
+          <input name="username" 
+          [(ngModel)]="model.username" 
+          class="form-control" 
+          placeholder="Nom utilisateur">
+
+          <input name="password" 
+          [(ngModel)]="model.password" 
+          class="form-control" 
+          placeholder="Mot de passe" 
+          type="password">
+
+          <button type="submit" class="btn btn-success">Se connecter</button>
+        </div>
+      
+        
+    </form>
+
+   
+   
+}
+      </div>
+    </div>
+  </nav>
+
+

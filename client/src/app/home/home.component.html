@@ -1,0 +1,32 @@
+@if (!registerMode) {
+<section class="px-5 py-6 py-xxl-10 hcf-bp-center hcf-bs-cover hero"
+    style="background-image: url('../assets/img/101ec34454268aadb770d0e5dbf6c52d.jpg'); background-size:100%;">
+    <div class="container-fluid">
+        <div class="row justify-content-md-center">
+            <div class="col-12 col-md-11 col-lg-9 col-xl-7 col-xxl-6 text-center text-white">
+                <h1 class="display-3 fw-bold mb-3">Art of Design</h1>
+                <p class="lead mb-5">Powerful, extensible, and feature-packed frontend toolkit. Build and customize with
+                    Sass,
+                    utilize prebuilt grid system and components, and bring projects to life with powerful JavaScript
+                    plugins.
+                </p>
+                <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                    <button (click)="registerToggle()" class="btn btn-light btn-lg px-4 gap-3">S' inscrire</button>
+                    <button type="button" class="btn btn-outline-light btn-lg px-4">En savoir plus</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+} @else {
+<section class="px-5 py-6 py-xxl-10 ">
+    <div class="container-fluid">
+        <div class="row justify-content-md-center">
+            <div class="col-12 col-md-11 col-lg-9 col-xl-7 col-xxl-6 text-center text-white">
+                
+                <app-register (canceledRegisterMode)="cancelRegister($event)"></app-register>
+            </div>
+        </div>
+    </div>
+</section>
+}

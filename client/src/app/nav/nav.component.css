@@ -1,0 +1,15 @@
+.form-control 
+{
+    margin-right: 10px;
+}
+
+.btn:not(:disabled):not(.disabled) {
+    cursor: pointer;
+    padding: 9px 20px;
+}
+
+.dropdown-toggle, .dropdown-item {
+    cursor: pointer;
+}
+
+
