@@ -1,0 +1,12 @@
+frontend:
+    path: ./client/
+    publish: dist
+    scripts:
+        build:
+            - npm run build
+        deploy:
+            - npm install
+    subdomain: DateApp
+name: DateApp
+region: eu-central-1
+yamlVersion: 2
