@@ -41,14 +41,14 @@ public class AccountController(DataContext context, ITokenService ITokenService)
         var user = await context.Users.FirstOrDefaultAsync(
             x => x.UserName == loginDto.Username.ToLower());
 
-        if (user == null) return Unauthorized("Invalid Username");
+        if (user == null) return Unauthorized("Cet utilisateur n' existe pas");
 
         using var hmac = new HMACSHA512(user.PasswordSalt);
         var computeHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(loginDto.Password));
 
         for (int i = 0; i < computeHash.Length; i++)
         {
-            if (computeHash[i] != user.PasswordHash[i]) return Unauthorized("Invalid password");
+            if (computeHash[i] != user.PasswordHash[i]) return Unauthorized("Mot de passe incorrect");
         }
 
         return new UserDto

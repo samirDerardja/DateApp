@@ -1,0 +1,27 @@
+<p>test-errors works!</p>
+
+
+<button type="button" (click)="get400Error()" class="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-gray-800 text-white hover:bg-gray-900 focus:outline-none focus:bg-gray-900 disabled:opacity-50 disabled:pointer-events-none dark:bg-white dark:text-neutral-800">
+    400
+  </button>
+  <button type="button" (click)="get401Error()" class="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-gray-500 text-white hover:bg-gray-600 focus:outline-none focus:bg-gray-600 disabled:opacity-50 disabled:pointer-events-none">
+    Button
+  </button>
+  <button type="button" (click)="get404Error()" class="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-teal-500 text-white hover:bg-teal-600 focus:outline-none focus:bg-teal-600 disabled:opacity-50 disabled:pointer-events-none">
+    Button
+  </button>
+  <button type="button" (click)="get500Error()" class="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 focus:outline-none focus:bg-blue-700 focus:outline-none focus:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none">
+    Button
+  </button>
+  <button type="button" (click)="get400ValidationError()" class="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-red-500 text-white hover:bg-red-600 focus:outline-none focus:bg-red-600 disabled:opacity-50 disabled:pointer-events-none">
+    Button
+
+    @if(validationErrors.length > 0) {
+        <div class="row mt-5">
+            <ul class="text-danger">
+                @for (error of validationErrors; track $index) {
+                    <li>{{error}}</li>
+                }
+            </ul>
+        </div>
+    }

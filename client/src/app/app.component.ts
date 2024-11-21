@@ -1,11 +1,18 @@
 import { CommonModule, NgFor } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component, inject, OnInit } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { NavigationEnd, RouterOutlet } from '@angular/router';
 import { NavComponent } from "./nav/nav.component";
 import { AccountService } from './_services/account.service';
 import { HomeComponent } from "./home/home.component";
 import { RegisterComponent } from "./register/register.component";
+import { IStaticMethods } from 'preline';
+
+declare global {
+  interface Window {
+    HSStaticMethods: IStaticMethods;
+  }
+}
 
 @Component({
   selector: 'app-root',
@@ -17,10 +24,11 @@ import { RegisterComponent } from "./register/register.component";
 export class AppComponent implements OnInit {
 
   private accountService = inject(AccountService);
+  router: any;
 
  
   ngOnInit(): void {
-   
+ 
     this.setCurrentUser();
   }
 
