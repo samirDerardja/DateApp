@@ -3,9 +3,10 @@
 @tailwind components;
 @tailwind utilities;
 
+
 @layer base {
-  body {
-    @apply font-urbanist text-black-variant;
+  html {
+    @apply font-urbanist;
   }
 }
 

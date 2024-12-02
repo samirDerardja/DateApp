@@ -1,0 +1,27 @@
+.border {
+    border-color: rgb(233 223 223);
+    border-radius: 20px;
+}
+
+.border-t {
+    border-color: rgb(233 223 223);
+}
+span,h3 {
+    color: rgb(94, 0, 148);
+    font-family: 'Erica One';
+    font-weight: 400;
+}
+
+p {
+    color:rgb(56, 56, 56)
+}
+a:hover {
+    color: rgb(94, 0, 148);
+}
+
+img, video { 
+    max-width: 640px;
+    height: 400px;
+    border-radius: 10px 20px 10px 20px;
+}
+

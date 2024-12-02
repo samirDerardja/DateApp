@@ -7,6 +7,7 @@ import { AccountService } from './_services/account.service';
 import { HomeComponent } from "./home/home.component";
 import { RegisterComponent } from "./register/register.component";
 import { IStaticMethods } from 'preline';
+import { NgxSpinnerComponent } from 'ngx-spinner';
 
 declare global {
   interface Window {
@@ -17,7 +18,7 @@ declare global {
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, CommonModule, NavComponent, HomeComponent, RegisterComponent], //on import le commonModule  qui contientle ngFor pour le html
+  imports: [RouterOutlet, CommonModule, NavComponent, HomeComponent, RegisterComponent, NgxSpinnerComponent], //on import le commonModule  qui contientle ngFor pour le html
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

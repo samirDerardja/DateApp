@@ -2,23 +2,26 @@
 module.exports = {
   content: ['./src/**/*.{html,ts}',
     './node_modules/preline/preline.js'],
-  darkMode: 'class',
+  darkMode: 'dark',
   theme: {
+    container: {
+      padding: '1rem',
+    },
     fontFamily: {
       'sam': ['"Erica One"', 'cursive'],
       'urbanist': ['"Urbanist"', 'cursive'],
     },
-    colors: { 
-      navblue: '#AEB9C7',
-      'black-variant': 'black',
-    },
-    },
+    // colors: { 
 
-    plugins: [require('@tailwindcss/forms'),
-    require('preline/plugin'),
-    require('@tailwindcss/typography'),
-    ],
+    //   'black-variant': 'black',
+    // },
+  },
+
+  plugins: [require('@tailwindcss/forms'),
+  require('preline/plugin'),
+  require('@tailwindcss/typography'),
+  ],
 
 
 
-};
+}; 

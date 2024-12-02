@@ -1,3 +1,4 @@
+using System.Security.Claims;
 using API.Data;
 using API.DTOs;
 using API.Entities;
@@ -11,7 +12,7 @@ using Microsoft.EntityFrameworkCore;
 namespace API.Controllers
 {
     [Authorize]
-    public class UsersController(IUserRepository userRepository) : BaseApiController
+    public class UsersController(IUserRepository userRepository, IMapper mapper) : BaseApiController
     {
       
         [HttpGet]
@@ -30,7 +31,21 @@ namespace API.Controllers
             if(user == null) return NotFound();
 
             return user;
-        } 
+        }  
+
+        [HttpPut]
+        public async Task<ActionResult> UpdateUser(MemberEditDto memberEditDto) {
+            var username = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            if( username == null) return BadRequest("Utilisateur n'a pas de token valide");
+            var user = await userRepository.GetUserByUsernameAsync(username);
+              if( user == null) return BadRequest("Utilisateur non trouvé");
+              mapper.Map(memberEditDto, user);
+
+              if( await userRepository.SaveAllAsync()) return NoContent();
+
+              return BadRequest("Erreur lors de la mise à jour");
+
+        }
     }
 
 }

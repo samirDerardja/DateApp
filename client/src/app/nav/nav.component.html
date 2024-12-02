@@ -5,7 +5,7 @@
 <header
   class="sticky top-4 inset-x-0 flex flex-wrap md:justify-start md:flex-nowrap z-50 w-full before:absolute before:inset-0 before:max-w-[66rem] before:mx-2 before:lg:mx-auto before:rounded-[26px] before:bg-bk before:backdrop-blur-md">
   <nav
-    class="relative max-w-[66rem] w-full py-2.5 ps-5 pe-2 md:flex md:items-center md:justify-between md:py-0 mx-2 lg:mx-auto">
+    class="relative max-w-[66rem] w-full py-2.5 ps-5 pe-2 md:flex md:items-center md:justify-between md:py-0 mx-2 lg:mx-auto mb-7">
     <div class="flex items-center justify-between">
       <!-- Logo -->
       <a class="flex-none rounded-md text-xl inline-block font-semibold focus:outline-none focus:opacity-80"
@@ -77,8 +77,8 @@
             role="menu" aria-orientation="vertical" aria-labelledby="hs-dropdown-floating-dark">
             <div class="py-1 md:px-1 space-y-1">
               <a class="flex items-center gap-x-3.5 py-2 md:px-3 rounded-lg text-sm text-white hover:text-neutral-300 focus:outline-none focus:text-neutral-300"
-                href="#">
-                Mon profil
+              routerLink="/member/edit" routerLinkActive="active">
+                Editer mon profil
               </a>
 
               <a (click)="logout()"
