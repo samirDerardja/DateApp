@@ -27,12 +27,16 @@
             "styles": [
             "src/styles.css",
             "node_modules/ngx-toastr/toastr.css",
-            "node_modules/ngx-spinner/animations/line-scale-pulse-out.css"
+            "node_modules/ngx-spinner/animations/line-scale-pulse-out.css"       
             
             ],
             "scripts": [ 
-             "node_modules/preline/preline.js"
-
+            
+             "node_modules/preline/preline.js",
+             "node_modules/lodash/lodash.min.js",
+             "node_modules/dropzone/dist/dropzone-min.js",
+             "src/assets/dropzone.js"
+          
             ] 
           },
           "configurations": {

@@ -40,7 +40,8 @@ public class AccountController(DataContext context, ITokenService ITokenService)
     [HttpPost("login")]
     public async Task<ActionResult<UserDto>> Login(LoginDto loginDto)
     {
-        var user = await context.Users.FirstOrDefaultAsync(
+        var user = await context.Users
+        .Include(p => p.Photos).FirstOrDefaultAsync(
             x => x.UserName == loginDto.Username.ToLower());
 
         if (user == null) return Unauthorized("Cet utilisateur n' existe pas");
@@ -56,7 +57,8 @@ public class AccountController(DataContext context, ITokenService ITokenService)
         return new UserDto
         {
             Username = user.UserName,
-            Token = ITokenService.CreateToken(user)
+            Token = ITokenService.CreateToken(user),
+            PhotoUrl = user.Photos.FirstOrDefault(x => x.IsMain)?.Url
         };
     }
 

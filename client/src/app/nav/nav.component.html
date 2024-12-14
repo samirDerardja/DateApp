@@ -58,18 +58,17 @@
           routerLink="/lists" routerLinkActive="active">List</a>
         <a class="font-urbanist p-3 ps-px sm:px-3 md:py-4 text-sm text-black hover:text-neutral-300 focus:outline-none focus:text-neutral-300"
           routerLink="/messages" routerLinkActive="active">Messages</a>
+          <p class="font-urbanist p-3 ps-px sm:px-3 md:py-4 text-sm text-black">Bienvenue {{accountService.currentUser()?.username}}</p>
         <div
           class="hs-dropdown [--strategy:static] md:[--strategy:fixed] [--adaptive:none] [--is-collapse:true] md:[--is-collapse:false] p-3 ps-px sm:px-3 md:py-4">
           <button id="hs-dropdown-floating-dark" type="button"
             class="font-semibold text-emerald-800 hs-dropdown-toggle flex items-center w-full text-sm text-black hover:text-neutral-300 focus:outline-none focus:text-neutral-300"
             aria-haspopup="menu" aria-expanded="false" aria-label="Dropdown">
-            Bienvenue {{accountService.currentUser()?.username | titlecase}}
-            <svg
-              class="hs-dropdown-open:-rotate-180 md:hs-dropdown-open:rotate-0 duration-300 shrink-0 ms-auto md:ms-1 size-4"
-              xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="m6 9 6 6 6-6" />
-            </svg>
+            <button type="button" class="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
+             
+              <img class="size-8 rounded-full" src="{{accountService.currentUser()?.photoUrl || './assets/img/istockphoto-1477583621-612x612.jpg'}}" alt="">
+            </button>
+           
           </button>
 
           <div
@@ -93,7 +92,9 @@
 
 
       </div>
+     
     </div>
+  
   }
     <!-- End Collapse -->
   </nav>

@@ -1,14 +1,15 @@
-import { Component, HostListener, inject, OnInit, ViewChild, viewChild } from '@angular/core';
+import { Component, HostListener, inject, OnInit, ViewChild} from '@angular/core';
 import { Member } from '../../_appModels/member';
 import { AccountService } from '../../_services/account.service';
 import { MembersService } from '../../_services/members.service';
 import { FormsModule, NgForm } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
+import { PhotoEditorComponent } from "../photo-editor/photo-editor.component";
 
 @Component({
   selector: 'app-member-edit',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, PhotoEditorComponent],
   templateUrl: './member-edit.component.html',
   styleUrl: './member-edit.component.css'
 })
@@ -26,8 +27,10 @@ export class MemberEditComponent implements OnInit {
   private memberService = inject(MembersService);
   private toastService = inject(ToastrService);
 
+
   ngOnInit(): void {
     this.loadMember();
+  
   }
 
 
@@ -47,5 +50,11 @@ export class MemberEditComponent implements OnInit {
       }
     })
 
+  } 
+
+
+  onMemberChange(event: Member) {
+    this.member = event;
+ 
   }
 }
